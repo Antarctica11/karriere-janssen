@@ -53,10 +53,16 @@ body {
     border-radius: 8px;
   }
   
-  /* Footer */
   footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #f1f1f1;
-    font-size: 0.9rem;
-  }
+    position: relative; /* Damit der Footer immer unten bleibt, wenn der Inhalt nicht hoch genug ist */
+    bottom: 0;
+    width: 100%; /* Footer nimmt die volle Breite ein */
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 20px; /* Mehr Padding auf kleinen Bildschirmen */
+    }
+}
+
   
