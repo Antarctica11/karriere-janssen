@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stellenangebote</title>
-    <link rel="stylesheet" href="css\stellen.css">
+    <link rel="stylesheet" href="css/stellen.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -12,18 +12,18 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 shadow-sm">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#">Karriereportal</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="..\index.html">Home</a>
-              <a class="nav-link" href="ueber uns.html">Über Uns</a>
-              <a class="nav-link active" href="Stellenangebote.html">Stellenangebote</a>
-              <a class="nav-link" href="wir bilden aus.html">Wir bilden aus</a>
+            <a class="navbar-brand fw-bold" href="#">Karriereportal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="..\index.html">Home</a>
+                    <a class="nav-link" href="ueber uns.html">Über Uns</a>
+                    <a class="nav-link active" href="Stellenangebote.html">Stellenangebote</a>
+                    <a class="nav-link" href="wir bilden aus.html">Wir bilden aus</a>
+                </div>
             </div>
-          </div>
         </div>
     </nav>
 
@@ -40,21 +40,22 @@
         <div class="container text-center">
             <h2 class="mb-4">Filtere nach deinem Wunschbereich</h2>
             <form class="d-flex justify-content-center">
-                <select class="form-select mx-2" style="max-width: 200px;">
-                    <option selected>Abteilung</option>
-                    <option>Vertrieb</option>
-                    <option>IT</option>
-                    <option>Marketing</option>
-                    <option>Personalwesen</option>
+                <select id="departmentFilter" class="form-select mx-2" style="max-width: 200px;" onchange="filterJobs()">
+                    <option value="all" selected>Abteilung</option>
+                    <option value="Vertrieb">Vertrieb</option>
+                    <option value="IT">IT</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Personalwesen">Personalwesen</option>
+                    <option value="Produktion">Produktion</option>
+                    <option value="Logistik">Logistik</option>
                 </select>
-                <select class="form-select mx-2" style="max-width: 200px;">
-                    <option selected>Standort</option>
-                    <option>Gießen</option>
-                    <option>Marburg</option>
-                    <option>Berlin</option>
-                    <option>Stadtallendorf</option>
+                <select id="locationFilter" class="form-select mx-2" style="max-width: 200px;" onchange="filterJobs()">
+                    <option value="all" selected>Standort</option>
+                    <option value="Gießen">Gießen</option>
+                    <option value="Marburg">Marburg</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Stadtallendorf">Stadtallendorf</option>
                 </select>
-                <button class="btn btn-primary mx-2">Filtern</button>
             </form>
         </div>
     </section>
@@ -62,41 +63,44 @@
     <!-- Job Listings Section -->
     <section class="job-listings py-5">
         <div class="container">
-            <div class="row">
+            <div class="row" id="jobCardsContainer">
                 <!-- Job Card 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 job-card Vertrieb Gießen">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Junior Marketing Manager</h5>
-                            <p class="text-muted">Standort: Berlin</p>
-                            <p class="card-text">Unterstütze unser Marketingteam bei spannenden Projekten und lerne von erfahrenen Profis.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Finanzbuchhalter (m/w/d)</h5>
+                            <p class="text-muted">Standort: Gießen</p>
+                            <p class="card-text">Verantwortlich für die Bearbeitung und Kontrolle aller buchhalterischen Aufgaben zur Sicherstellung der finanziellen Stabilität.</p>
+                            <a href="stellen/finance.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
                 <!-- Job Card 2 -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 job-card Produktion Marburg">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Softwareentwickler (m/w/d)</h5>
-                            <p class="text-muted">Standort: Stadtallendorf</p>
-                            <p class="card-text">Entwickle und implementiere innovative Softwarelösungen für unsere internen Systeme.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Drahtzieher (m/w/d)</h5>
+                            <p class="text-muted">Standort: Marburg</p>
+                            <p class="card-text">Effiziente und qualitätsgerechte Herstellung von Drähten unter Einhaltung der Produktionsvorgaben und Sicherheitsstandards.</p>
+                            <a href="stellen/drahtzieher.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
                 <!-- Job Card 3 -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 job-card Logistik Berlin">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">HR Specialist</h5>
-                            <p class="text-muted">Standort: Gießen</p>
-                            <p class="card-text">Unterstütze das HR-Team bei der Betreuung und Weiterentwicklung unserer Mitarbeiter.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Lagermitarbeiter</h5>
+                            <p class="text-muted">Standort: Berlin</p>
+                            <p class="card-text">Verantwortlich für die Warenannahme, -lagerung und -ausgabe sowie für die Sicherstellung eines reibungslosen Lagerablaufs.</p>
+                            <a href="stellen/lagermitarbeiter.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
-                <!-- Weitere Job Cards nach Bedarf hinzufügen -->
+            </div>
+            <div id="noJobsMessage" class="text-center mt-5" style="display:none;">
+                <h3 class="text-muted">Es wurden keine passenden Jobangebote gefunden.</h3>
+                <p>Bitte passen Sie Ihre Filter an oder versuchen Sie es später erneut.</p>
             </div>
         </div>
     </section>
@@ -105,5 +109,28 @@
     <footer class="text-center py-4 bg-dark text-white">
         <p>&copy; 2024 Karriereportal. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        function filterJobs() {
+            const department = document.getElementById("departmentFilter").value;
+            const location = document.getElementById("locationFilter").value;
+            const jobCards = document.querySelectorAll(".job-card");
+            let jobFound = false;
+
+            jobCards.forEach(card => {
+                const matchesDepartment = department === "all" || card.classList.contains(department);
+                const matchesLocation = location === "all" || card.classList.contains(location);
+                if (matchesDepartment && matchesLocation) {
+                    card.style.display = "block";
+                    jobFound = true; // Job gefunden
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Zeige Nachricht an, wenn keine Jobs gefunden wurden
+            document.getElementById("noJobsMessage").style.display = jobFound ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
