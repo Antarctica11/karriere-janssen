@@ -86,12 +86,19 @@ body {
 }
 
 /* Job Details Section */
+.job-details {
+    background-color: #242424; /* Hintergrundfarbe für den Jobdetails-Bereich */
+    padding: 20px; /* Innenabstand */
+    border-radius: 8px; /* Abgerundete Ecken */
+}
+
 .job-details h2 {
     font-size: 2rem;
     color: #ffffff;
 }
 
-.job-details p, .job-details ul li {
+.job-details p,
+.job-details ul li {
     color: #cccccc;
     font-size: 1rem;
 }
@@ -108,6 +115,32 @@ body {
 
 .job-details ul li {
     margin-bottom: 10px;
+}
+
+/* Bewerbungshinweis */
+.bewerbung-hinweis {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* Buttons in Job Details */
+.job-details .btn {
+    display: block; /* Stellt sicher, dass die Schaltflächen blockiert sind */
+    width: 100%; /* Schaltflächen nehmen die volle Breite ein */
+    margin-top: 10px; /* Abstand zwischen den Schaltflächen */
+}
+
+/* Download Button */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
 }
 
 /* Footer */
