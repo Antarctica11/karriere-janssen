@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="de" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,58 +42,50 @@
             <form class="d-flex justify-content-center">
                 <select id="departmentFilter" class="form-select mx-2" style="max-width: 200px;" onchange="filterJobs()">
                     <option value="all" selected>Abteilung</option>
-                    <option value="Vertrieb">Vertrieb</option>
-                    <option value="IT">IT</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Personalwesen">Personalwesen</option>
-                    <option value="Produktion">Produktion</option>
+                    <option value="Rechnungswesen">Rechnungswesen</option>
                     <option value="Logistik">Logistik</option>
-                </select>
-                <select id="locationFilter" class="form-select mx-2" style="max-width: 200px;" onchange="filterJobs()">
-                    <option value="all" selected>Standort</option>
-                    <option value="Gießen">Gießen</option>
-                    <option value="Marburg">Marburg</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Stadtallendorf">Stadtallendorf</option>
+                    <option value="Produktion">Produktion</option>
+                    <option value="IT">IT</option>
                 </select>
             </form>
         </div>
     </section>
 
-    <!-- Job Listings Section -->
     <section class="job-listings py-5">
         <div class="container">
             <div class="row" id="jobCardsContainer">
-                <!-- Job Card 1 -->
-                <div class="col-md-6 col-lg-4 mb-4 job-card Vertrieb Gießen">
+                <!-- Bereichsleitung Externes Rechnungswesen -->
+                <div class="col-md-6 col-lg-4 mb-4 job-card Rechnungswesen">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Finanzbuchhalter (m/w/d)</h5>
-                            <p class="text-muted">Standort: Gießen</p>
-                            <p class="card-text">Verantwortlich für die Bearbeitung und Kontrolle aller buchhalterischen Aufgaben zur Sicherstellung der finanziellen Stabilität.</p>
-                            <a href="stellen/finance.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Bereichsleitung Externes Rechnungswesen (m/w/d)</h5>
+                            <p class="text-muted">Standort: Emden</p>
+                            <p class="card-text">Sie sind verantwortlich für die Führung des Teams und die Erstellung sowie Prüfung der Monats-, Quartals- und Jahresabschlüsse nach HGB. Zudem optimieren sie Buchhaltungsprozesse und sorgen für die Einhaltung gesetzlicher Vorgaben.</p>
+                            <a href="stellen/leiterexternes.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
-                <!-- Job Card 2 -->
-                <div class="col-md-6 col-lg-4 mb-4 job-card Produktion Marburg">
+
+                <!-- Sachbearbeiter/in im Lager -->
+                <div class="col-md-6 col-lg-4 mb-4 job-card Logistik">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Drahtzieher (m/w/d)</h5>
-                            <p class="text-muted">Standort: Marburg</p>
-                            <p class="card-text">Effiziente und qualitätsgerechte Herstellung von Drähten unter Einhaltung der Produktionsvorgaben und Sicherheitsstandards.</p>
-                            <a href="stellen/drahtzieher.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Sachbearbeiter/in im Lager (m/w/d)</h5>
+                            <p class="text-muted">Standort: Emden</p>
+                            <p class="card-text">Sie sind zuständig für die Verwaltung und Organisation von Lagerbeständen, die Bearbeitung von Bestellungen sowie die Durchführung von Bestandskontrollen und -buchungen.</p>
+                            <a href="stellen/sachlager.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
-                <!-- Job Card 3 -->
-                <div class="col-md-6 col-lg-4 mb-4 job-card Logistik Berlin">
+
+                <!-- Bereichsleitung Produktion -->
+                <div class="col-md-6 col-lg-4 mb-4 job-card Produktion">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Lagermitarbeiter</h5>
-                            <p class="text-muted">Standort: Berlin</p>
-                            <p class="card-text">Verantwortlich für die Warenannahme, -lagerung und -ausgabe sowie für die Sicherstellung eines reibungslosen Lagerablaufs.</p>
-                            <a href="stellen/lagermitarbeiter.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
+                            <h5 class="card-title fw-bold">Bereichsleitung Produktion (m/w/d)</h5>
+                            <p class="text-muted">Standort: Emden</p>
+                            <p class="card-text">Sie übernehmen die Verantwortung für die effiziente Steuerung und Optimierung der Produktionsprozesse sowie die Führung des Produktionsteams, um eine termingerechte und qualitativ hochwertige Fertigung sicherzustellen.</p>
+                            <a href="stellen/leiterprod.html" class="btn btn-outline-primary mt-3">Details ansehen</a>
                         </div>
                     </div>
                 </div>
@@ -113,14 +105,12 @@
     <script>
         function filterJobs() {
             const department = document.getElementById("departmentFilter").value;
-            const location = document.getElementById("locationFilter").value;
             const jobCards = document.querySelectorAll(".job-card");
             let jobFound = false;
 
             jobCards.forEach(card => {
                 const matchesDepartment = department === "all" || card.classList.contains(department);
-                const matchesLocation = location === "all" || card.classList.contains(location);
-                if (matchesDepartment && matchesLocation) {
+                if (matchesDepartment) {
                     card.style.display = "block";
                     jobFound = true; // Job gefunden
                 } else {

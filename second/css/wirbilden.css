@@ -1,68 +1,143 @@
-/* Grundlayout */
+/* Allgemeine Layout- und Farbgebung */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #121212; /* Dunkler Hintergrund */
+    color: #f5f5f5; /* Helle Schriftfarbe */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #333;
 }
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    margin-right: 15px;
+}
+
 .navbar-nav .nav-link {
     color: #f1f1f1 !important;
-}
-.navbar-nav .nav-link:hover {
+  }
+  .navbar-nav .nav-link:hover {
     color: #ffc107 !important;
-}
+  }
 
 /* Hero Section */
 .hero-section {
-    background-image: url('https://images.unsplash.com/photo-1573497019395-4590ed6d4c58');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 100px 20px;
-    color: #f1f1f1;
-}
-.hero-section h1 {
-    font-size: 2.8rem;
-    font-weight: bold;
-}
-.hero-section p {
-    font-size: 1.2rem;
+    padding: 80px 0;
+    background-color: #1e1e1e; /* Einheitlicher dunkler Hintergrund */
+    text-align: center;
 }
 
-/* Program and Internship Sections */
-.program-section, .internship-section {
-    color: #333;
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f5f5f5;
 }
-.program-section h2, .internship-section h2 {
-    color: #0056b3;
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
 }
-.program-section .card, .internship-section .card {
-    border: 1px solid #e0e0e0;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+/* Filter Section */
+.filter-section {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    border-radius: 8px;
+    margin-top: 20px;
 }
-.program-section .card:hover, .internship-section .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+
+.filter-section h2 {
+    color: #f5f5f5;
+    font-size: 1.5rem;
 }
-.program-section .btn-outline-primary, .internship-section .btn-outline-primary {
-    color: #0056b3;
+
+.form-select, .btn-primary {
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
     border-color: #0056b3;
 }
-.program-section .btn-outline-primary:hover, .internship-section .btn-outline-primary:hover {
-    background-color: #0056b3;
-    color: #fff;
+
+/* Job Listings */
+.job-listings {
+    flex: 1; /* Macht den Abschnitt flexibel, damit die Fußzeile unten bleibt */
+    margin-top: 20px;
+}
+
+.job-listings .card {
+    background-color: #2a2a2a; /* Dunkle Kartenfarbe */
+    color: #ffffff;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.job-listings .card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.card-text {
+    color: #cccccc;
+}
+
+.card .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.card .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
 }
 
 /* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #f1f1f1;
-    font-size: 0.9rem;
+    background-color: #333; /* Dunklere Fußzeile */
+    padding: 15px 0;
+    color: #cccccc;
+    text-align: center;
 }
+
 footer p {
     margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Nachricht bei fehlenden Jobs */
+#noJobsMessage {
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #f5f5f5; /* Farbe der Nachricht */
 }
