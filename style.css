@@ -65,4 +65,39 @@ body {
     }
 }
 
-  
+/* Stil für die Social-Media-Sektion */
+.social-media-wrapper {
+  background-color: #000000; /* Angepasster Grauton für den Hintergrund */
+  border: 1px solid #000000; /* Etwas dunklerer Grauton für den Rand */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+  border-radius: 8px; /* Abgerundete Ecken */
+  max-width: 600px; /* Maximale Breite für den Balken */
+  margin: 0 auto; /* Zentriert die Box */
+  padding: 20px; /* Innenabstand */
+}
+
+/* Abstände und Styling für die Bilder und Texte */
+.social-media-section img {
+  width: 60px; /* Festgelegte Breite für Icons */
+  height: 60px; /* Festgelegte Höhe für Icons */
+  object-fit: contain;
+}
+
+.social-media-section p {
+  color: #ffffff; /* Angepasste Schriftfarbe für einen harmonischen Grauton */
+  font-size: 0.9rem; /* Etwas kleinere Schrift für den Text */
+}
+
+/* Kopfzeile anpassen */
+.social-media-section h2 {
+  color: #3d3d3d; /* Dunklerer Grauton für die Überschrift */
+  font-weight: 700; /* Fette Schrift für besseren Kontrast */
+  margin-bottom: 20px; /* Abstand zur darunterliegenden Box */
+}
+
+/* Kleinere Anpassungen bei der mobilen Ansicht */
+@media (max-width: 768px) {
+  .social-media-wrapper {
+      padding: 2rem; /* Mehr Padding auf kleineren Bildschirmen */
+  }
+}
